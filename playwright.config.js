@@ -31,6 +31,8 @@ module.exports = defineConfig({
     trace: 'on-first-retry',
   },
 
+  timeout: 600000, // 10 minutes timeout for all tests
+
   /* Configure projects for major browsers */
   projects: [
     {

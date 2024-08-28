@@ -15,12 +15,11 @@ test("Collecting info for SLA Test", async ( { page } ) => {
         const ticketPage = new TicketPage(page)
         await ticketPage.visitTicket(ticketListArray[i].ticketLink)
         await ticketPage.fillForm()
-        const questionPage = new QuestionPage(page)
-        const question = await questionPage.grabQuestionInfo()
-        await page.pause()
-        await addQuestion(ticketListArray[i].ticketNumber, question)
-
-
+        for (let i = 0; i < 30; i++) {
+            const questionPage = new QuestionPage(page)
+            const question = await questionPage.grabQuestionInfo()
+            // await addQuestion(ticketListArray[i].ticketNumber, question)
+        }
     }
 
     
